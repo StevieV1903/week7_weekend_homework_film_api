@@ -4,6 +4,7 @@
     <div class="main-container">
       <all-films-list :films='films'></all-films-list >
         <film-detail :film="selectedFilm"></film-detail >
+          <favourite-films-list :favourite-films="favouriteFilms"></favourite-films-list >
     </div>
   </div>
 </template>
@@ -13,12 +14,14 @@
 import {eventBus} from './main.js'
 import AllFilmsList from './components/AllFilmsList.vue'
 import FilmDetail from './components/FilmDetail.vue'
+import FavouriteFilmsList from './components/FavouriteFilmList.vue'
 
 export default {
   name: 'app',
   data() {
     return {
       films: [],
+      favouriteFilms: [],
       selectedFilm: null
     }
   },
@@ -31,12 +34,22 @@ export default {
       eventBus.$on('film-selected', (film)=> {
               this.selectedFilm = film
             })
-
+      eventBus.$on('favourite-film-selected', (film)=> {
+                    const mapOfIds = this.favouriteFilms.map(film => film.id)
+                    if (!mapOfIds.includes(film.id)){
+                      this.favouriteFilms.push(film)
+                    }
+                  })
+                  // eventBus.$on('favourite-beer-de-selected',(beer) => {
+                  //   const index = this.favouriteBeers.indexOf(beer)
+                  //     this.favouriteBeers.splice(index)
+                  // })
   },
 
   components: {
     "all-films-list": AllFilmsList,
-    "film-detail": FilmDetail
+    "film-detail": FilmDetail,
+    "favourite-films-list": FavouriteFilmsList
   }
 }
 </script>
