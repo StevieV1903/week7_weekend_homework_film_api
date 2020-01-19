@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h1>STUDIO GHIBLI FILMS</h1>
+    <h2>Find out more about the films produced by the Ghibli film studio and create a list of your favourite films.</h2>
     <all-films-list :films='films'></all-films-list >
       <film-detail :film="selectedFilm"></film-detail >
         <favourite-films-list :favourite-films="favouriteFilms"></favourite-films-list >
@@ -65,14 +66,17 @@
           background-color: #dddddd
         }
         h1 {
-          font-family: Arial;
           font-size: 50px;
           background: -webkit-gradient(linear, left top, left bottom, from(#8282ff), to(#000000));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           margin-left: 20px;
           text-align: left;
+        }
+
+        h2 {
+          margin-left: 20px;
+          text-align: left;
           color: #0a0180;
-          font-size: 32px;
         }
       </style>
