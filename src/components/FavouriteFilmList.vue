@@ -1,5 +1,6 @@
 <template lang="html">
   <div>
+    <h3>Favourite Films;</h3>
     <ul>
       <film-list-item v-for="(film) in favouriteFilms" :film="film"></film-list-item>
     </ul>
@@ -20,4 +21,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+h3 {
+  margin-left: 20px;
+  color: #0a0180;
+}
+
+ul {
+  font-size: 18px;
+}
 </style>
