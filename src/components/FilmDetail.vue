@@ -42,6 +42,13 @@ background-color: #fee2bd;
   border-color: #0a0180;
 }
 
+button:hover {
+  background-color: #ff9100;
+  color: #02001d;
+  transition: all 0.5s ease;
+
+}
+
 h3 {
   margin-left: 20px;
   color: #0a0180;

@@ -65,6 +65,11 @@
           background-color: #dddddd
         }
         h1 {
+          font-family: Arial;
+          font-size: 50px;
+          background: -webkit-gradient(linear, left top, left bottom, from(#8282ff), to(#000000));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
           margin-left: 20px;
           text-align: left;
           color: #0a0180;
